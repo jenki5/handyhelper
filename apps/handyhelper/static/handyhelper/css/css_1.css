@@ -1,0 +1,50 @@
+.inline_block_display{
+    display: inline-block;
+    margin: 20px;
+    font-weight: bold;
+}
+.add_job{
+    margin: 25px 20px 20px 500px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.all_jobs_display{
+    width: 500px;
+}
+.my_jobs_display{
+    width: 250px;
+}
+.form-width{
+    width: 300px;
+}
+.form-layout{
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px;
+}
+.back{
+    margin: 20px 0 0 400px;
+}
+.jobs_outline{
+    border: 3px solid black;
+    width: 300px;
+}
+.add_my_jobs{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.welcome{
+    margin: 20px 0 0 30px;
+}
+.form-width{
+    width: 300px;
+}
+.form-layout{
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px;
+}
+.vert_top{
+    vertical-align: top;
+}

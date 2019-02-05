@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../../static/handyhelper/css/css_1.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome">Welcome to Handy Helper</h1>
+        <div class="form-group form-width form-layout">
+            <h2>Register</h2>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li class="text-danger">{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/process_register/" method="POST">
+                {% csrf_token %}
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                <label for="confirm">Password Confirmation</label>
+                <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Password Confirmation"> <br>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="form-group form-width form-layout">
+            <h2>Login</h2>
+            <p class="text-danger">{{request.session.login_fail}}</p>
+            <form action="/process_login/" method="POST">
+                {% csrf_token %}
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password"> <br>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
